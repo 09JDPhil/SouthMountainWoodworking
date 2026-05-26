@@ -4,12 +4,16 @@
   font-style: normal;
 }
 
-.roboto-light, .section-description-text {
+.roboto-light, .banner-heading-text, .section-description-text {
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
   font-variation-settings: "wdth" 100;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -18,7 +22,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-rows: 1fr 4fr 1fr;
+  grid-template-rows: 1fr 3fr 0.5fr;
   grid-template-columns: 1fr;
   min-height: 100vh;
   background: #000000;
@@ -57,8 +61,12 @@ body {
   justify-self: center;
   font-size: 2rem;
   background: transparent;
-  border-color: #bac3ca;
+  border: 3px solid #bac3ca;
   color: #bac3ca;
+  text-align: center;
+  border-radius: 3px;
+  color: #bac3ca;
+  text-decoration: none;
 }
 .contact-button:hover {
   background: #bac3ca;
@@ -93,7 +101,7 @@ body {
   align-self: end;
   font-size: clamp(27px, 4.1vw, 60px);
   font-weight: bolder;
-  background-color: rgba(0, 0, 0, 0.3137254902);
+  color: #000;
   margin: 0;
 }
 
@@ -104,6 +112,16 @@ body {
   align-self: start;
   margin: 0;
   padding: 0 16vw;
+}
+
+.banner-heading-text {
+  justify-self: center;
+  align-self: end;
+  font-size: clamp(27px, 4.1vw, 60px);
+  font-weight: bolder;
+  color: #000;
+  margin: 0;
+  color: #bac3ca;
 }
 
 .gallery-image {
@@ -152,21 +170,40 @@ body {
 
 .contact-section {
   display: grid;
-  grid-template-columns: 30px 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   justify-items: center;
-  justify-content: start;
-  row-gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
-.contact-section h2, .contact-section a {
+.contact-section h2, .contact-section a, .contact-section p {
   padding: 0px 10px;
   justify-self: start;
   background-color: unset;
   text-decoration: none;
+  color: #000;
 }
 .contact-section a:link, .contact-section a:visited {
   color: #000000;
 }
+.contact-section .email-section {
+  display: grid;
+  grid-template-columns: 0.5fr 3fr;
+  justify-items: center;
+  justify-content: start;
+  align-items: center;
+  row-gap: 10px;
+}
+.contact-section .contact-text {
+  justify-self: center;
+  padding: 0 10px;
+}
+.contact-section .contact-text-description {
+  justify-self: center;
+  font-size: 10px;
+}
 
 .icon {
   width: clamp(16px, 2vw, 30px);
+  justify-self: end;
 }/*# sourceMappingURL=styles.css.map */

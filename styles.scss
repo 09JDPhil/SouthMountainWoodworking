@@ -18,21 +18,22 @@ $steel-gray: #bac3ca;
 $olive-leaf: #2E4F03;
 $primary-color: $steel-gray;
 $secondary-color: $olive-leaf;
-
+html {
+    scroll-behavior: smooth;
+}
 body {
     background-color: $primary-color;
 }
 
 .container {
     display: grid;
-    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-rows: 1fr 3fr 0.5fr;
     grid-template-columns: 1fr;
     min-height: 100vh;
     background: #000000;
     color: #FFFFFF;
     @extend .marcellus-regular;
     margin: 0;
-
 } 
 
 .cover-background {
@@ -66,8 +67,12 @@ body {
     justify-self: center;
     font-size: 2rem;
     background: transparent;
-    border-color: $primary-color;
+    border: 3px solid $primary-color;
     color: $primary-color;
+    text-align: center;
+    border-radius: 3px;
+    color: $primary-color;
+    text-decoration: none;
 
     &:hover {
         background: $primary-color;
@@ -102,7 +107,7 @@ body {
     align-self: end;
     font-size: clamp(27px, 4.1vw, 60px);
     font-weight: bolder;
-    background-color: #00000050;
+    color: #000;
     margin:0;
 }
 
@@ -113,6 +118,17 @@ body {
     align-self: start;
     margin:0;
     padding: 0 16vw;
+    @extend .roboto-light;
+}
+
+.banner-heading-text {
+    justify-self: center;
+    align-self: end;
+    font-size: clamp(27px, 4.1vw, 60px);
+    font-weight: bolder;
+    color: #000;
+    margin:0;
+    color: $primary-color;
     @extend .roboto-light;
 }
 
@@ -164,23 +180,45 @@ body {
 
 .contact-section {
     display: grid;
-    grid-template-columns: 30px 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     justify-items: center;
-    justify-content: start;
-    row-gap: 10px;
+    justify-content: center;
+    align-items: center;
 
-    h2, a {
+    h2, a, p {
         padding: 0px 10px;
         justify-self: start;
         background-color: unset;
         text-decoration: none;
+        color: #000;
     }
 
     a:link, a:visited {
         color:#000000; 
     }
+
+    .email-section {
+        display: grid;
+        grid-template-columns: 0.5fr 3fr;
+        justify-items: center;
+        justify-content: start;
+        align-items: center;
+        row-gap: 10px;
+    }
+
+    .contact-text {
+        justify-self: center;
+        padding: 0 10px;
+    }
+
+    .contact-text-description{
+        justify-self: center;
+        font-size:10px;
+    }
 }
 
 .icon {
     width: clamp(16px, 2vw, 30px);
+    justify-self: end;
 }
