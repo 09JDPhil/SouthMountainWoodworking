@@ -71,9 +71,9 @@ body {
 }
 
 .contact-button {
-  width: clamp(200px, 23vw, 450px);
+  width: clamp(250px, 23vw, 450px);
   justify-self: center;
-  font-size: 2rem;
+  font-size: clamp(25px, 2vw, 40px);
   background: transparent;
   border: 3px solid #bac3ca;
   color: #bac3ca;
@@ -81,6 +81,7 @@ body {
   border-radius: 3px;
   color: #bac3ca;
   text-decoration: none;
+  margin: 10px 0;
 }
 .contact-button:hover {
   background: #bac3ca;
@@ -90,9 +91,10 @@ body {
 
 .hero-banner {
   display: grid;
-  grid-template-rows: 1fr 150px 100px 80px;
+  grid-template-rows: auto;
   justify-self: center;
   align-items: center;
+  gap: 10px;
 }
 
 .logo-img {
@@ -118,6 +120,11 @@ body {
   margin: 0;
   padding: 0 15vw;
 }
+@media screen and (max-width: 1000px) {
+  .section-description-text {
+    padding: 0 2vw;
+  }
+}
 
 .banner-heading-text {
   justify-self: center;
@@ -138,10 +145,8 @@ body {
 }
 
 .about-me-paragraph {
-  display: grid;
-}
-.about-me-paragraph p {
-  font-size: clamp(16px, 10vw, 25px);
+  font-size: clamp(16px, 1.7vw, 25px);
+  margin: 0;
 }
 
 .gallery-div {
@@ -153,46 +158,54 @@ body {
   grid-auto-flow: column;
   align-items: baseline;
   justify-content: center;
-  gap: 10px;
+  border-radius: 10px;
 }
 
 .image-grid {
   display: grid;
-  grid-template: 1fr/1fr 2fr;
-  gap: 10px;
-  padding: 10px;
+  grid-template: auto/1fr 2fr;
   align-items: center;
-  padding: 25px;
-  gap: 25px;
+  padding: 0 25px;
+  gap: 15px;
 }
 
 .image-grid-reverse {
   display: grid;
-  grid-template: 1fr/2fr 1fr;
-  gap: 10px;
-  padding: 10px;
+  grid-template: auto/2fr 1fr;
   align-items: center;
-  padding: 25px;
-  gap: 25px;
+  padding: 0 25px;
 }
 
-.my-picture {
+.my-picture-shop {
   width: 100%;
   border-radius: 50px;
+  grid-row: span 3;
+}
+
+.my-picture-mountain {
+  width: 100%;
+  border-radius: 50px;
+  grid-row: span 5;
 }
 
 .about-headings {
   text-align: center;
-  font-size: clamp(25px, 2vw, 50px);
+  font-size: clamp(25px, 3vw, 50px);
 }
 
 .price {
   font-size: 35px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .sold {
   text-decoration: line-through;
   font-size: 35px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .gallery-background-1 {
@@ -269,14 +282,6 @@ body {
   width: 95vw;
 }
 
-@media screen and (max-width: 1200px) {
-  .gallery-image-section {
-    grid-template-columns: 1fr 1fr;
-  }
-  .container {
-    grid-template-rows: 1fr 6fr 1fr;
-  }
-}
 .galley-section {
   display: grid;
   grid-column-end: span 2;
@@ -512,5 +517,50 @@ form.hidden {
   }
   h1 {
     font-size: 24px;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .p1, .p5 {
+    grid-column: span 2;
+  }
+  .p2 {
+    order: 2;
+  }
+  .p3, .p4, .p5 {
+    order: 3;
+  }
+  .my-picture-mountain {
+    grid-row: span 3;
+    order: 3;
+  }
+  .my-picture-shop {
+    order: 2;
+    grid-row: span 2;
+  }
+  .shop-p1 {
+    grid-column: span 2;
+    order: 1;
+  }
+  .shop-p2, .shop-p3 {
+    order: 2;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .gallery-image-section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 800px) {
+  .my-picture-mountain {
+    grid-row: span 2;
+  }
+  .p4, .shop-p3 {
+    grid-column: span 2;
+  }
+  .my-picture-shop {
+    grid-row: span 1;
+  }
+  .gallery-image-section {
+    grid-template-columns: 1fr;
   }
 }/*# sourceMappingURL=styles.css.map */
