@@ -180,6 +180,7 @@ body {
     grid-template: auto / 2fr 1fr;
     align-items: center;
     padding: 0 25px;
+    gap: 10px;
 }
 
 .my-picture-shop {
@@ -564,6 +565,10 @@ body {
     .gallery-image-section {
         grid-template-columns: 1fr 1fr;
     }
+
+    .logo-letters  {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -580,4 +585,21 @@ body {
     .gallery-image-section {
         grid-template-columns: 1fr;
     }
+}
+
+@media screen and (max-width: 500px) {
+    .p3 {
+        grid-column: span 2;
+    }
+    .image-grid, .image-grid-reverse {
+        grid-template: auto / 1fr
+    }
+    .my-picture-shop {
+        order: 0;
+    }
+    .p1,.p2,.p3,.p4,.p5, .my-picture-mountain {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
 }
